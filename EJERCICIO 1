@@ -1,0 +1,66 @@
+CLASE ALMACENAMIENTO
+import java.util.ArrayList;
+
+public class Almacenamiento<T> {
+    private ArrayList<T> lista;
+
+    public Almacenamiento() {
+        this.lista = new ArrayList<>();
+    }
+    public void agregar (T a){
+        lista.add(a);
+    }
+
+    public boolean eliminarX (T x){
+        boolean borrado = false;
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).equals(x)){
+                lista.remove(i);
+                borrado = true;
+            }
+        }
+        return borrado;
+    }
+
+    public boolean encontrarO (T o){
+        boolean encontrado = false;
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).equals(o)){
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
+    public String contar (){
+        return "hay " + lista.size() + " elementos";
+    }
+
+}
+
+MAIN
+
+public class Main {
+    public static void main(String[] args) {
+        Almacenamiento<String> lista = new Almacenamiento<String>();
+        String s1 = "hola";
+        String s2 = "mundo";
+        lista.agregar(s1);
+        lista.agregar(s2);
+        System.out.println(lista.contar());
+        System.out.println(lista.encontrarO("yyyy"));
+        System.out.println(lista.eliminarX(s2));
+        System.out.println(lista.contar());
+
+        Almacenamiento<Integer> lista2 = new Almacenamiento<Integer>();
+        Integer n1 = 122;
+        Integer n2 = 356;
+        lista2.agregar(n1);
+        lista2.agregar(n2);
+        System.out.println(lista2.contar());
+        System.out.println(lista2.encontrarO(122));
+        System.out.println(lista2.eliminarX(677));
+        System.out.println(lista2.contar());
+
+
+    }
+}
