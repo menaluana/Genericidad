@@ -1,0 +1,35 @@
+CLASE CONJUNTO
+import java.util.LinkedHashSet;
+
+public class Conjunto <T>{
+    LinkedHashSet<T> lista = new LinkedHashSet<>();
+
+    public void agregar (T t){
+        lista.add(t);
+    }
+    public boolean eliminar (T x){
+        return lista.remove(x);
+    }
+    public boolean encontrarElemento (T d){
+        return lista.contains(d);
+    }
+
+}
+
+MAIN
+public class Main {
+    public static void main(String[] args) {
+        Conjunto<Integer> lista1 = new Conjunto<>();
+        Integer n1 = 4;
+        Integer n2 = 0;
+        Integer n3 = 9;
+        lista1.agregar(n1);
+        lista1.agregar(n2);
+        lista1.agregar(n3);
+        System.out.println(lista1.eliminar(5));
+        System.out.println(lista1.eliminar(4));
+        System.out.println(lista1.encontrarElemento(7));
+        System.out.println(lista1.encontrarElemento(0));
+
+    }
+}
