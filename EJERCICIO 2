@@ -1,0 +1,38 @@
+CLASE PILA 
+import java.util.LinkedList;
+import java.util.Stack;
+
+public class Pila <T>{
+    LinkedList<T> pila = new LinkedList<>();
+
+T tope(){
+        return pila.getLast();
+    }
+void agregar(T t){
+        pila.addLast(t);
+}
+T  eliminarElemento()
+{
+    T aux=pila.getLast();
+    pila.removeLast();
+    return aux;
+}
+int tamanio()
+{
+    return pila.size();
+}
+}
+
+MAIN
+
+public class Main {
+    public static void main(String[] args) {
+    Pila pila = new Pila();
+    pila.agregar(1);
+    pila.agregar(3);
+    System.out.println("El tope de la pila es: "+ pila.tope());
+    System.out.println("Se elimino el dato: "+pila.eliminarElemento() );
+    System.out.println("El tamanio de la pila es: "+ pila.tamanio());
+    System.out.println("Esta vacia la pila? "+ pila.pila.isEmpty());
+    }
+}
